@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BootStrap 4 First Project</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css"> </head>
+    <script src="example.json" type="text/javascript"></script>
+    <script type="text/javascript" src="example.json"></script>
+    
+
+<body>
+    <div class="json-table-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+               <div id="test"></div>
+                <h3 class="table-header text-center">FRONTEND </h3>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">item</th>
+                            <th scope="col">value</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody id="FRONTEND_id">
+                    </tbody>
+                </table>
+            </div>
+
+          <!--            scound coloum-->
+            <div class="col-md-6">
+               <h3 class="table-header text-center">WEBSERVER</h3>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">item</th>
+                            <th scope="col">value</th>
+                           
+                        </tr>
+                    </thead>
+                         <tbody id="WEBSERVER_id">  
+                    </tbody>
+                </table>
+            </div>
+            
+          
+        </div>
+    </div>
+    </div>
+
+    
+    
+     <script type="text/javascript">
+        var FRONTEND_id=document.getElementById('FRONTEND_id');
+        var WEBSERVER_id=document.getElementById('WEBSERVER_id');
+     
+         var pdata='',i=1; 
+         for(var key in data['firstbalance']['FRONTEND']){
+            pdata=pdata+'<tr><th scope="row">'+i+'</th><td>'+key+'</td><td>'+data['firstbalance']['FRONTEND'][key]+'</td></tr>';
+            i++;
+         }
+        FRONTEND_id.innerHTML=pdata;
+         
+        pdata='',i=1; 
+        for(var key in data['firstbalance']['webserver1']){
+            pdata=pdata+'<tr><th scope="row">'+i+'</th><td>'+key+'</td><td>'+data['firstbalance']['webserver1'][key]+'</td></tr>';
+            i++;
+         }
+        WEBSERVER_id.innerHTML=pdata;
+         
+        
+
+    </script>
+    
+    
+   
+    
+    <script src="dist/js/jquery-3.1.1.min.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <script src="dist/js/fontawesome.min.js"></script>
+   
+</body>
+
+</html>
